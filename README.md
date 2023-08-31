@@ -1,45 +1,45 @@
-# Meu_Portfolio
+# My_Portfolio
 
-Projeto Meu_Portfolio; foi desenvolvido em HTML, CSS e Javascript. O objetivo foi desenvolver um portfolio e colocar ele em um site, ele possui alguns botões no canto superior direito, ao clicar vc será direcionado as subtitulos do portfolio. 
+"Project My_Portfolio": was developed using HTML, CSS, and Javascript. The goal was to create a portfolio and host it on a website. The portfolio includes buttons in the upper right corner that, when clicked, redirect to the corresponding sections of the portfolio.
 
-# Images Projeto
+# Project Image
 
-Aqui estão algumas imagens da página;
+Here are some images of the page;
 
 #
-Tela inicial
+Home Screen
 <img aligh="center" src="Images Portfolio/Tela inicial.png" width="800px">
 
 #
-Sobre
+About
 <img aligh="center" src="Images Portfolio/Tela sobre.png" width="800px">
 
 #
 
 #
-Habilidades
+Skills
 <img aligh="center" src="Images Portfolio/Tela Habilidades.png" width="800px">
 
 #
 
 #
-Projetos
+Projects
 <img aligh="center" src="Images Portfolio/Tela Projetos.png" width="800px">
 
 #
 
 #
-Projetos 2
+Projects 2 
 <img aligh="center" src="Images Portfolio/Tela Projeto 2.png" width="800px">
 
 #
-Contato
+Contact
 <img aligh="center" src="Images Portfolio/Tela contato.png" width="800px">
 
 #
 
-# Trecho de Código
-Trecho de código em HTML, CSS e javascript.
+# Code Snippet
+Code snippet in HTML, CSS, and Javascript.
 
 #
 HTML
@@ -59,6 +59,6 @@ Javascript
 
 #
 
-# Link Projeto
-**Link para acessar o projeto;**
+# Project Link
+**Link to access the project:**
 http://patrickcaramico.com.br/
