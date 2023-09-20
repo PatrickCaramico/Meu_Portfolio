@@ -38,6 +38,7 @@
 .navbar .navbar__content .navbar__mobile,
 .navbar .navbar__content .navbar__mobile .mobile__links {
   display: none;
+  font-size: 40px;
 }
 
 @media only screen and (max-width: 768px) {
