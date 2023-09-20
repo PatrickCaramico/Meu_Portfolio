@@ -20,6 +20,7 @@ header .header__left p {
 header .header__right .header__image {
   position: relative;
   line-height: 0;
+  max-width: 100%;
 }
 
 header .header__right .header__image::after {
@@ -37,7 +38,6 @@ header .header__right .header__image::after {
 
 header .header__right .header__image .Patrick {
   border-radius: 0.5rem;
-  min-width: 25rem;
   max-width: 100%;
 }
 
