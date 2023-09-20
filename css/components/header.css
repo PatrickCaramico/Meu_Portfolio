@@ -15,6 +15,7 @@ header .header__left p {
   margin-top: 2rem;
   margin-bottom: 4rem;
   max-width: 50rem;
+  font-size: 24px;
 }
 
 header .header__right .header__image {
