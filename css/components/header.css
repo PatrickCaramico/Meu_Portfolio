@@ -39,6 +39,7 @@ header .header__right .header__image::after {
 header .header__right .header__image .Patrick {
   border-radius: 0.5rem;
   max-width: 100%;
+  height: 400px;
 }
 
 header .header__right .header__image .background {
