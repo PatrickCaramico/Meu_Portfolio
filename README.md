@@ -8,7 +8,7 @@ Here are some images of the page;
 
 #
 Home Screen
-<img aligh="center" src="Images Portfolio/Tela inicial.png" width="800px">
+<img aligh="center" src="Images Portfolio/Portfolio.jpeg" width="800px">
 
 #
 About
