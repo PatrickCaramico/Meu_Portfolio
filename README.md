@@ -24,13 +24,17 @@ Skills
 
 #
 Projects
-<img aligh="center" src="Images Portfolio/Tela Projetos.png" width="800px">
+<img aligh="center" src="Images Portfolio/Sistema_atualizado.jpeg" width="800px">
 
 #
 
 #
 Projects 2 
-<img aligh="center" src="Images Portfolio/Tela Projeto 2.png" width="800px">
+<img aligh="center" src="Images Portfolio/Projeto_tela2.jpeg" width="800px">
+
+#
+project 3
+<img aligh="center" src="Images Portfolio/Projeto_tela3.jpeg" width="800px">
 
 #
 Contact
