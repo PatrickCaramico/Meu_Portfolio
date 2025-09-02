@@ -1,237 +1,491 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <!-- Meta tags -->
+
+<head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- title -->
-    <title>Portfolio Patrick Caramico</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/extends.css" />
-    <!-- Fonts -->
+    <title>Portfólio V2 | Patrick Souza</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
-      rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
 
-    <!-- Icon -->
-    <link rel="icon" type="image/png" href="./assets/images/novo favicon.ico">
-
-  </head>
-  <body>
-    <!-- navbar -->
-    <nav class="navbar">
-      <div class="navbar__content max-width mb-0">
-        <a href="/">
-          <!-- <img src="assets/images/Logo_Portfolio2.svg" alt="Patrick Caramico" /> -->
-        </a>
-        <ul class="navbar__links">
-          <li><a href="#header">Início</a></li>
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#skills">Habilidades</a></li>
-          <li><a href="#projects">Projetos</a></li>
-          <li><a href="#footer">Contato</a></li>
-        </ul>
-        <div class="navbar__mobile">
-          <img src="assets/images/menu.svg" alt="menu" class="burguer" />
-          <ul class="mobile__links">
-            <li><a href="#header">Início</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#projects">Projetos</a></li>
-            <li><a href="#footer">Contato</a></li>
-          </ul>
+<body class="antialiased">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-20 transition-all duration-300 bg-white shadow-sm" id="navbar">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-gray-900">Patrick Souza</a>
+            <div class="hidden md:flex space-x-8 text-gray-600 font-medium">
+                <a href="#header" class="hover:text-sky-600 transition-colors">Início</a>
+                <a href="#about" class="hover:text-sky-600 transition-colors">Sobre</a>
+                <a href="#skills" class="hover:text-sky-600 transition-colors">Habilidades</a>
+                <a href="#projects" class="hover:text-sky-600 transition-colors">Projetos</a>
+                <a href="#contact" class="hover:text-sky-600 transition-colors">Contato</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-600 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
         </div>
-      </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <a href="#header" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors">Início</a>
+            <a href="#about" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors">Sobre</a>
+            <a href="#skills" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors">Habilidades</a>
+            <a href="#projects" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors">Projetos</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors">Contato</a>
+        </div>
     </nav>
 
-    <!-- header -->
-    <header id="header" class="max-width">
-      <div class="header__left">
-        <h1>Olá! Sou Patrick Caramico, busco ser o Desenvolvedor web</h1>
-        <p>
-          "Tudo que você pode fazer, ou sonha que pode, comece. Ousadia tem genialidade, poder e magia."
-        </p>
-        <a href="#about" class="btn btn-primary">Saiba Mais!</a>
-      </div>
-      <div class="header__right">
-        <div class="header__image">
-          <img src="assets/images/ft atualiza Patrick_Caramico.jpeg" alt="Patrick" class="Patrick" />
-          <img src="assets/images/abstract.svg" alt="background" class="background" />
+    <!-- Header/Hero Section -->
+    <header id="header" class="pt-32 pb-16 lg:pb-24 bg-gray-50">
+        <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+                    Olá! Sou Patrick Souza, <br class="hidden lg:inline" />busco ser o
+                    Desenvolvedor web
+                </h1>
+                <p class="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0 mb-8">
+                    Desenvolvedor web dedicado a construir soluções criativas e
+                    robustas, com foco em usabilidade e inovação.
+                </p>
+                <a href="#about"
+                    class="inline-block bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105">Saiba
+                    Mais!</a>
+            </div>
+            <div class="lg:w-1/2 flex justify-center">
+                <div
+                    class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl ring-4 ring-sky-600 ring-offset-4 ring-offset-gray-50">
+                    <img src="assets/images/teste_foto.png" alt="Patrick" class="w-full h-full object-cover" />
+                </div>
+            </div>
         </div>
-      </div>
     </header>
 
-    <!-- Sobre -->
-    <section id="about" class="about max-width">
-      <div class="about__left">
-        <h2 class="secondary-title">Além do código: quem sou eu?</h2>
-        <p>
-          Que tal se conectar comigo nas redes sociais abaixo e saber mais sobre
-            meus projetos?
-        </p>
-        <ul>
-          <li>
-            <a href="https://patrickcaramico.github.io/Digital_Curriculo/"><img src="assets/images/icon_curriculo2.svg" alt="CV" /></a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/patrickcaramico/"><img src="assets/images/linkedin.svg" alt="Linkedin" /></a>
-          </li>
-          <li>
-            <a href="https://github.com/PatrickCaramico"><img src="assets/images/github.svg" alt="Github" /></a>
-          </li>
-        </ul>
-      </div>
-      <div class="about__right">
-        <h3 class="tertiary-title mb-m">
-          Sou apaixonado por tecnologia e desafios complexos
-        </h3>
-        <p>
-          É um prazer conhecê-lo! Sou um desenvolvedor web com habilidades abrangentes em HTML, CSS, JavaScript, PHP, MySQL, Python e muitos outros. 
-          Minha rotina é uma harmonia entre tecnologia e criatividade, e eu deixo minha marca no GitHub. Com uma mente organizada, sou apaixonado por livros e pela busca constante de conhecimento. 
-          Enfrentar desafios complexos é o que mais me motiva, onde a criatividade e a ousadia se encontram. Estou aqui para transformar ideias em realidade e criar experiências envolventes. Vamos colaborar para expressar sua visão por meio do mundo digital!
-        </p>
-      </div>
-    </section>
+    <main>
+        <!-- About Section -->
+        <section id="about" class="py-16 lg:py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <div
+                    class="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between gap-12">
+                    <div class="lg:w-1/2 text-center lg:text-left max-w-lg">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                            Além do código: quem sou eu?
+                        </h2>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            É um prazer conhecê-lo! Sou um desenvolvedor web com habilidades
+                            abrangentes em HTML, CSS, JavaScript, PHP, MySQL, Python e
+                            muitos outros.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Minha rotina é uma harmonia entre tecnologia e criatividade, e
+                            eu deixo minha marca no GitHub. Com uma mente organizada, sou
+                            apaixonado por livros e pela busca constante de conhecimento.
+                            Enfrentar desafios complexos é o que mais me motiva, onde a
+                            criatividade e a ousadia se encontram. Estou aqui para
+                            transformar ideias em realidade e criar experiências
+                            envolventes. Vamos colaborar para expressar sua visão por meio
+                            do mundo digital!
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-8">
+                            Que tal se conectar comigo nas redes sociais abaixo e saber mais
+                            sobre meus projetos?
+                        </p>
+                        <div class="flex justify-center lg:justify-start space-x-6">
+                            <a href="https://digital-curriculum.netlify.app/" target="_blank"
+                                class="text-gray-600 hover:text-sky-600 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                    fill="currentColor" class="paper-logo">
+                                    <rect x="6" y="4" width="20" height="24" rx="3" fill="#e2e8f0" />
+                                    <rect x="10" y="9" width="12" height="2" rx="1" fill="#2563eb" />
+                                    <rect x="10" y="14" width="12" height="2" rx="1" fill="#2563eb" />
+                                    <rect x="10" y="19" width="8" height="2" rx="1" fill="#2563eb" />
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/patrickcaramico/" target="_blank"
+                                class="text-gray-600 hover:text-sky-600 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                    fill="currentColor" class="linkedin-logo">
+                                    <rect x="2" y="2" width="28" height="28" rx="6" fill="#0A66C2" />
+                                    <rect x="7" y="13" width="3" height="10" rx="1.5" fill="#fff" />
+                                    <circle cx="8.5" cy="10" r="1.5" fill="#fff" />
+                                    <rect x="13" y="13" width="3" height="10" rx="1.5" fill="#fff" />
+                                    <rect x="18" y="17" width="7" height="6" rx="1.5" fill="#fff" />
+                                    <rect x="18" y="13" width="7" height="2.5" rx="1.25" fill="#fff" />
+                                </svg>
+                            </a>
+                            <a href="https://github.com/PatrickCaramico" target="_blank"
+                                class="text-gray-600 hover:text-sky-600 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                    fill="currentColor" class="github-logo">
+                                    <path
+                                        d="M16 2C8.268 2 2 8.268 2 16c0 6.627 4.388 12.243 10.475 14.207.765.141 1.045-.332 1.045-.737 0-.364-.013-1.329-.02-2.609-4.262.926-5.163-2.055-5.163-2.055-.696-1.768-1.7-2.24-1.7-2.24-1.391-.951.106-.932.106-.932 1.537.108 2.347 1.579 2.347 1.579 1.366 2.342 3.586 1.666 4.463 1.274.138-.989.535-1.666.973-2.049-3.404-.387-6.983-1.702-6.983-7.582 0-1.675.598-3.045 1.578-4.119-.158-.388-.685-1.947.15-4.06 0 0 1.29-.413 4.23 1.573a14.74 14.74 0 0 1 3.853-.518c1.308.006 2.627.177 3.853.518 2.938-1.986 4.226-1.573 4.226-1.573.838 2.113.311 3.672.153 4.06.984 1.074 1.577 2.444 1.577 4.119 0 5.892-3.584 7.191-6.998 7.573.551.475 1.042 1.414 1.042 2.853 0 2.06-.019 3.722-.019 4.229 0 .409.276.885 1.053.735C25.616 28.24 30 22.627 30 16c0-7.732-6.268-14-14-14z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 flex justify-center lg:justify-end">
+                        <img src="assets/images/Tecnologia.png" alt="Tecnologias" class="rounded-lg shadow-lg" />
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- habilidades -->
-    <section id="skills" class="skills">
-      <div class="skills__content max-width">
-        <h2 class="tertiary-title">Minha caixinha de ferramentas</h2>
-        <p class="description">
-          Descubra as habilidades e ferramentas que domino e que me permitem
-          criar soluções criativas e funcionais para meus clientes.
-        </p>
-        <ul>
-          <li class="skills__item">
-            <div class="image-container">
-              <img src="assets/images/notebook.png" alt="Desenvolvimento Web" />
-            </div>
-            <h3>Desenvolvimento Web</h3>
-            <p>
-              Tenho experiência em projetos de HTML, CSS, JavaScript, PHP, MySql, com foco em tecnologias modernas. 
-              Estou sempre atualizado com as últimas tendências do setor e busco aplicar as melhores práticas em meus projetos
-            </p>
-          </li>
-          <li class="skills__item">
-            <div class="image-container">
-              <img src="assets/images/colors.png" alt="Web Design" />
-            </div>
-            <h3>Web Design</h3>
-            <p>
-              Habilidade em criar layouts modernos e responsivos, com foco na
-              experiência do usuário.
-            </p>
-          </li>
-          <li class="skills__item">
-            <div class="image-container">
-              <img src="assets/images/phone.png" alt="Design" />
-            </div>
-            <h3>Design</h3>
-            <p>
-              Conhecimentos em design de interface e experiência do usuário
-              visualmente atraentes e intuitivas.
-            </p>
-          </li>
-          <li class="skills__item">
-            <div class="image-container">
-              <img src="assets/images/files.png" alt="Gerenciamentos de versões" />
-            </div>
-            <h3>Gerenciamentos de versões</h3>
-            <p>
-              Experiência em ferramentas de gerenciamento de versão para
-              controle de projetos ou de softwares.
-            </p>
-          </li>
-        </ul>
-      </div>
-    </section>
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 lg:py-24 bg-gray-50">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Minha caixinha de ferramentas
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-12">
+                    Descubra as habilidades e ferramentas que domino e que me permitem
+                    criar soluções criativas e funcionais para meus clientes.
+                </p>
 
-    <!-- Projetos -->
-    <section id="projects" class="projects max-width">
-      <div class="projects__content">
-        <h2 class="secondary-title">Recent Works</h2>
-        <p>
-          De ideias abstratas a projetos bem-sucedidos, aqui estão alguns dos
-          meus projetos mais recentes;
-        </p>
-      </div>
-      <ul>
-        <li>
-          <div class="image">
-            <img src="assets/images/Sistema V2.jpeg" alt="Sistema V2" />
-          </div>
-          <div class="projects__info">
-            <h3 class="tertiary-title">
-              Projeto Sistema V2!
-            </h3>
-            <p>
-              Projeto Sistema, desenvolvido utilizando linguagem de programação em HTML, CSS e Javascript.
-            </p>
-            <a href="https://sistema-alphav2.netlify.app/index.html">Veja o Projeto Completo &rarr;</a>
-          </div>
-        </li>
-        <li class="projects__reversed-list">
-          <div class="image">
-            <img src="assets/images/Super Mario Bros.jpeg" alt="Super Mario Bros" />
-          </div>
-          <div class="projects__info">
-            <h3 class="tertiary-title">
-              Projeto Super Mario Bros_Game!
-            </h3>
-            <p>
-              Jogo do super Mario Bros, utilizando HTML, CSS e javascript.
-            </p>
-            <a href="https://patrickcaramico.github.io/Project_MarioBros/">Veja o Projeto Completo &rarr;</a>
-          </div>
-        </li>
-        <li>
-          <div class="image">
-            <img src="assets/images/Jogo_game.jpeg" alt="Jogo_game" />
-          </div>
-          <div class="projects__info">
-            <h3 class="tertiary-title">
-              Projeto Jogo Joquempô!
-            </h3>
-            <p>
-              Jogo Joquempô, criado atraves do HTML, CSS e Javascript.
-            </p>
-            <a href="https://patrickcaramico.github.io/Project_paper_game/">Veja o Projeto Completo &rarr;</a>
-          </div>
-        </li>
-      </ul>
-    </section>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-gray-100 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-code">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            Desenvolvimento Web
+                        </h3>
+                        <p class="text-gray-500 text-sm">
+                            Tenho experiência em projetos de HTML, CSS, JavaScript, PHP e
+                            MySql, com foco em tecnologias modernas. Estou sempre atualizado
+                            com as últimas tendências do setor e busco aplicar as melhores
+                            práticas em meus projetos.
+                        </p>
+                    </div>
 
-    <!-- Footer -->
-    <footer id="footer">
-      <div class="footer__content max-width mb-0">
-        <h2 class="tertiary-title mb-s">Vamos conversar?</h2>
-        <p class="mb-m">
-          Fique à vontade para entrar em contato comigo e esclarecer qualquer dúvida. Estou aberto a novas conexões e oportunidades, para colaborar e fazer a diferença ao seu lado.       </p>
-        <div class="footer__contact mb-m">
-          <span class="mb-m">📧 patrickcaramico88@gmail.com</span>
-          <span>📞 (11) 97388-1905</span>
-          <span>📞 (11) 97038-6690</span>
+                    <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-gray-100 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-layout">
+                                <rect width="18" height="18" x="3" y="3" rx="2" />
+                                <line x1="3" x2="21" y1="9" y2="9" />
+                                <line x1="9" x2="9" y1="21" y2="9" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            Web Design
+                        </h3>
+                        <p class="text-gray-500 text-sm">
+                            Habilidade em criar layouts modernos e responsivos, com foco na
+                            experiência do usuário e na usabilidade.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-gray-100 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-tablet-smartphone">
+                                <path d="M18 12h-4" />
+                                <path d="M10 12h.01" />
+                                <rect width="14" height="20" x="5" y="2" rx="2" />
+                                <path d="M12 18h.01" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Design</h3>
+                        <p class="text-gray-500 text-sm">
+                            Conhecimentos em design de interface e experiência do usuário,
+                            criando interfaces visualmente atraentes e intuitivas.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-gray-100 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-git-branch">
+                                <line x1="6" x2="6" y1="3" y2="15" />
+                                <path d="M18 6c-3 0-6 3-6 6v3" />
+                                <path d="M6 18h.01" />
+                                <path d="M18 6h.01" />
+                                <path d="M18 18h.01" />
+                                <path d="m22 15-4-3-4 3" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            Gerenciamento de Versão
+                        </h3>
+                        <p class="text-gray-500 text-sm">
+                            Experiência em ferramentas de gerenciamento de versão, como o
+                            Git, para controle de projetos de software.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-5 lg:py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                        Projetos Recentes
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        De ideias abstratas a projetos bem-sucedidos, aqui estão alguns
+                        dos meus projetos mais recentes.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div
+                        class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="assets/images/Projeto_1.png"
+                            alt="Gerador de Cores" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                Gerador de Cores
+                            </h3>
+                            <p class="text-sm text-gray-500 mb-4">
+                               Este é um projeto de front-end dinâmico, criado para ser uma ferramenta elegante e funcional de exploração de cores.
+                            </p>
+                            <a href="https://cores-gerador.netlify.app/"
+                                class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors">Ver
+                                Projeto <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+
+                            <a href="assets/images/Gerador_cores.gif" class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors mt-4 w-full flex items-center gap-2">Ver Gif
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+
+                            <a href="https://github.com/PatrickCaramico/Cores_GeneratorV1" class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors mt-4 w-full flex items-center gap-2">Ver Github
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div
+                        class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="assets/images/Projeto_2.png"
+                            alt="ClickTime | V3" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                ClickTime | V3
+                            </h3>
+                            <p class="text-sm text-gray-500 mb-4">
+                                ClickTime é um sistema de contagem regressiva que permite aos usuários agendar eventos e monitorar o tempo restante para esses eventos, projeto já está na Versão 3.
+                            </p>
+
+                            <a href="https://clicktimev3.netlify.app/"
+                                class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors">Ver
+                                Projeto <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+
+                            <a href="assets/images/ClickTime.gif" class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors mt-4 w-full flex items-center gap-2">Ver Gif
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+
+                            <a href="https://github.com/PatrickCaramico/ClickTime_V3" class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors mt-4 w-full flex items-center gap-2">Ver Github
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div
+                        class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="assets/images/Projeto_3.png" alt="Gerador de Senha"
+                            class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                Gerador de Senha
+                            </h3>
+                            <p class="text-sm text-gray-500 mb-4">
+                                Este é um projeto de um Gerador de Senhas simples e funcional, criado com tecnologias web front-end. 
+                            </p>
+                            <a href="https://passwordrs-generator.netlify.app/"
+                                class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors">Ver
+                                Projeto <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+
+                            <a href="assets/images/Gerador_password.gif" class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors mt-4 w-full flex items-center gap-2">Ver Gif
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+
+                            <a href="https://github.com/PatrickCaramico/Password_generador" class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors mt-4 w-full flex items-center gap-2">Ver Github
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div
+                        class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="assets/images/Projeto_4.png"
+                            alt="Relogio Digital" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                Relogio Digital
+                            </h3>
+                            <p class="text-sm text-gray-500 mb-4">
+                                Meu projeto de relógio digital, desenvolvido em HTML, CSS e JavaScript, tem como objetivo recriar um mini relógio digital.
+                            </p>
+                            <a href="https://di-clocks.netlify.app/"
+                                class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors">Ver
+                                Projeto <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+
+                            <a href="assets/images/digital_clocks.gif" class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors mt-4 w-full flex items-center gap-2">Ver Gif
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+
+                            <a href="https://github.com/PatrickCaramico/Meu_Relogio_Digital" class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors mt-4 w-full flex items-center gap-2">Ver Github
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div
+                        class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="assets/images/Projeto_5.png"
+                            alt="Calculadora Digital| V2" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                Calculadora Digital | V2
+                            </h3>
+                            <p class="text-sm text-gray-500 mb-4">
+                                Projeto de calculadora digital modificado para V2 usando HTML, CSS e JavaScript.
+                            </p>
+                            <a href="https://calc-projectv2.netlify.app/"
+                                class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors">Ver
+                                Projeto <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+
+                            <a href="assets/images/CalculadorV2.gif" class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors mt-4 w-full flex items-center gap-2">Ver Gif
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+
+                            <a href="https://github.com/PatrickCaramico/Project_Calculator_v2" class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors mt-4 w-full flex items-center gap-2">Ver Github
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div
+                        class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="assets/images/Projeto_6.png"
+                            alt="Jogo Mata Mosquito" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                Jogo Mata Mosquito
+                            </h3>
+                            <p class="text-sm text-gray-500 mb-4">
+                                App Game criando com modulo Javascript Avançado.
+                            </p>
+                            <a href="https://click-mosca.netlify.app/index.html"
+                                class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors">Ver
+                                Projeto <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+
+                            <a href="assets/images/Mata_mosca.gif" class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors mt-4 w-full flex items-center gap-2">Ver Gif
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+
+                            <a href="https://github.com/PatrickCaramico/Web_developer_course/tree/main/10%C2%B0-App-Game-Mata-Mosquito" class="inline-block text-sky-600 hover:text-sky-800 font-semibold transition-colors mt-4 w-full flex items-center gap-2">Ver Github
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+
+                        </div>
+
+                    </div>
+                    <div class="w-full flex justify-end mt-4 mb-2 col-span-1 lg:col-span-3">
+                        <a id="project" href="https://github.com/PatrickCaramico"
+                            class="inline-block bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105">Veja mais projetos aqui!</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <footer id="contact" class="bg-gray-800 text-white py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Vamos conversar?</h2>
+                <p class="max-w-xl mx-auto mb-8 text-gray-300">
+                    Fique à vontade para entrar em contato comigo e esclarecer qualquer
+                    dúvida. Estou aberto a novas conexões e oportunidades, para
+                    colaborar e fazer a diferença ao seu lado.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-8">
+                    <span class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail">
+                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                            <path d="m22 7-10 7L2 7" />
+                        </svg>
+                        patrickcaramico88@gmail.com</span>
+                    <span class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2.06 19.5 19.5 0 0 1-8.63-3.07 19.5 19.5 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2H7c.69 0 1.3.35 1.62.96l2.3 4.47a1 1 0 0 1-.5 1.5l-2.43 1.22a16.42 16.42 0 0 0 6.3 6.3l1.22-2.43a1 1 0 0 1 1.5-.5l4.47 2.3c.61.32.96.93.96 1.62z" />
+                        </svg>
+                        (11) 97388-1905</span>
+                </div>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://patrickcaramico.github.io/Digital_Curriculo/" target="_blank"
+                        class="text-gray-300 hover:text-sky-400 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                            fill="currentColor" class="paper-logo">
+                            <rect x="6" y="4" width="20" height="24" rx="3" fill="#e2e8f0" />
+                            <rect x="10" y="9" width="12" height="2" rx="1" fill="#2563eb" />
+                            <rect x="10" y="14" width="12" height="2" rx="1" fill="#2563eb" />
+                            <rect x="10" y="19" width="8" height="2" rx="1" fill="#2563eb" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/patrickcaramico/" target="_blank"
+                        class="text-gray-300 hover:text-sky-400 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                            fill="currentColor" class="linkedin-logo">
+                            <rect x="2" y="2" width="28" height="28" rx="6" fill="#0A66C2" />
+                            <rect x="7" y="13" width="3" height="10" rx="1.5" fill="#fff" />
+                            <circle cx="8.5" cy="10" r="1.5" fill="#fff" />
+                            <rect x="13" y="13" width="3" height="10" rx="1.5" fill="#fff" />
+                            <rect x="18" y="17" width="7" height="6" rx="1.5" fill="#fff" />
+                            <rect x="18" y="13" width="7" height="2.5" rx="1.25" fill="#fff" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/PatrickCaramico" target="_blank"
+                        class="text-gray-300 hover:text-sky-400 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                            fill="currentColor" class="github-logo">
+                            <path
+                                d="M16 2C8.268 2 2 8.268 2 16c0 6.627 4.388 12.243 10.475 14.207.765.141 1.045-.332 1.045-.737 0-.364-.013-1.329-.02-2.609-4.262.926-5.163-2.055-5.163-2.055-.696-1.768-1.7-2.24-1.7-2.24-1.391-.951.106-.932.106-.932 1.537.108 2.347 1.579 2.347 1.579 1.366 2.342 3.586 1.666 4.463 1.274.138-.989.535-1.666.973-2.049-3.404-.387-6.983-1.702-6.983-7.582 0-1.675.598-3.045 1.578-4.119-.158-.388-.685-1.947.15-4.06 0 0 1.29-.413 4.23 1.573a14.74 14.74 0 0 1 3.853-.518c1.308.006 2.627.177 3.853.518 2.938-1.986 4.226-1.573 4.226-1.573.838 2.113.311 3.672.153 4.06.984 1.074 1.577 2.444 1.577 4.119 0 5.892-3.584 7.191-6.998 7.573.551.475 1.042 1.414 1.042 2.853 0 2.06-.019 3.722-.019 4.229 0 .409.276.885 1.053.735C25.616 28.24 30 22.627 30 16c0-7.732-6.268-14-14-14z" />
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-gray-400 mt-8 text-sm">
+                    Todos os direitos reservados! Patrick Caramico &copy; 2025
+                </p>
+            </div>
+        </footer>
+    </main>
+        <!-- Modal GIF -->
+        <div id="gifModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 hidden">
+                        <div class="relative bg-white rounded-lg shadow-lg p-0 max-w-xl w-full flex flex-col items-center">
+                                <div class="relative w-full flex items-center justify-center">
+                                    <img src="https://placehold.co/600x400/a3a3a3/ffffff?text=Super+Mario+Bros" alt="Super Mario Bros GIF" class="rounded-lg max-w-full h-auto mb-0" />
+                                    <button id="closeGifModal"
+                                        class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-500 hover:bg-sky-600 hover:text-white rounded-full shadow-lg text-2xl font-bold focus:outline-none transition-all duration-200"
+                                        aria-label="Fechar">
+                                        &times;
+                                    </button>
+                                </div>
+                        </div>
         </div>
-        <ul class="mb-l">
-          <li>
-            <a href="https://patrickcaramico.github.io/Digital_Curriculo/"><img src="assets/images/icon_curriculo2.svg" alt="Instagram" /></a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/patrickcaramico/"><img src="assets/images/linkedin.svg" alt="Linkedin" /></a>
-          </li>
-          <li>
-            <a href="https://github.com/PatrickCaramico"><img src="assets/images/github.svg" alt="GitHub" /></a>
-          </li>
-        </ul>
-        <p class="footer__copyright">
-          Todos os direitos reservados! Patrick Caramico &copy; 2023
-        </p>
-      </div>
-    </footer>
-    <!-- script -->
-    <script src="scripts/index.js"></script>
-  </body>
+        <script src="assets/js/script.js"></script>
+</body>
 </html>
