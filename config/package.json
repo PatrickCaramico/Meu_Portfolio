@@ -1,0 +1,21 @@
+{
+  "name": "portfolio_v1",
+  "version": "1.0.0",
+  "description": "Portfólio SPA Profissional usando HTML, CSS e JS",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "dev": "serve ."
+  },
+  "keywords": [
+    "portfolio",
+    "html",
+    "css",
+    "js"
+  ],
+  "author": "Patrick Souza",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

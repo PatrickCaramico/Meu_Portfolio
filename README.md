@@ -1,68 +1,71 @@
-# My_Portfolio
+# Portfólio v3 — Patrick Souza
 
-"Project My_Portfolio": was developed using HTML, CSS, and Javascript. The goal was to create a portfolio and host it on a website. The portfolio includes buttons in the upper right corner that, when clicked, redirect to the corresponding sections of the portfolio.
+Portfólio pessoal em formato SPA (Single Page Application), atualmente na versão **v3**, com foco em design moderno, performance e experiência do usuário.
 
-# Project Image
+## ✨ Visão geral
 
-Here are some images of the page;
+Este projeto apresenta:
 
-#
-Home Screen
-<img aligh="center" src="Images Portfolio/Portfolio.jpeg" width="800px">
+- **Hero** com destaque profissional e CTA.
+- **Sobre mim** com foco em trajetória e direcionamento técnico.
+- **Projetos recentes** com links de demo e GitHub.
+- **Habilidades** com layout visual por grupos (Linguagens & Frameworks, Design & Layout, Ferramentas & Plataformas), incluindo ícones em estilo de referência.
+- **Contato** com formulário e links sociais.
+- **Tema claro/escuro** com persistência via `localStorage`.
+- **Animações de entrada** com `IntersectionObserver`.
 
-#
-About
-<img aligh="center" src="Images Portfolio/Tela sobre.png" width="800px">
+## 🧱 Stack utilizada
 
-#
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Phosphor Icons
+- Devicon (ícones de tecnologias)
+- Google Fonts (Inter)
 
-#
-Skills
-<img aligh="center" src="Images Portfolio/Tela Habilidades.png" width="800px">
+## 📁 Estrutura do projeto
 
-#
+```text
+Portfolio_v3/
+├── index.html
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── images/
+│   └── js/
+│       └── main.js
+└── config/
+    └── package.json
+```
 
-#
-Projects
-<img aligh="center" src="Images Portfolio/Sistema_atualizado.jpeg" width="800px">
+## 🚀 Como executar localmente
 
-#
+### Opção 1 (rápida, sem instalar nada no projeto)
 
-#
-Projects 2 
-<img aligh="center" src="Images Portfolio/Projeto_tela2.jpeg" width="800px">
+Abra o arquivo `index.html` no navegador.
 
-#
-project 3
-<img aligh="center" src="Images Portfolio/Projeto_tela3.jpeg" width="800px">
+### Opção 2 (servidor local recomendado)
 
-#
-Contact
-<img aligh="center" src="Images Portfolio/Novo_rodape.jpeg" width="800px">
+Na raiz do projeto, execute:
 
-#
+```bash
+npx serve .
+```
 
-# Code Snippet
-Code snippet in HTML, CSS, and Javascript.
+Depois acesse a URL exibida no terminal (geralmente `http://localhost:3000`).
 
-#
-HTML
-<img aligh="center" src="Images Portfolio/Tela HTML.png" width="800px">
+## 🎨 Personalização
 
-#
+- Conteúdo e seções: `index.html`
+- Estilos visuais e responsividade: `assets/css/style.css`
+- Interações (menu mobile, tema, animações, formulário): `assets/js/main.js`
 
-#
-CSS
-<img aligh="center" src="Images Portfolio/Tela CSS.png" width="800px">
+## 📌 Próximas melhorias sugeridas
 
-#
+- Ajustar links reais de contato (LinkedIn, GitHub e e-mail).
+- Integrar envio real do formulário (ex.: EmailJS, Formspree ou backend próprio).
+- Otimizar imagens para web (compressão e formatos modernos).
 
-#
-Javascript
-<img aligh="center" src="Images Portfolio/Tela Javascript.png" width="800px">
+## 📄 Licença
 
-#
-
-# Project Link
-**Link to access the project:**
-http://patrickcaramico.com.br/
+Este projeto está sob licença MIT, conforme definido em `config/package.json`.
