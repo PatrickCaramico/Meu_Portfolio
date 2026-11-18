@@ -106,6 +106,8 @@
         <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6Z" /><path d="m9 12 2 2 4-4" /></symbol>
         <symbol id="i-network" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="6" rx="1" /><rect x="2" y="16" width="6" height="6" rx="1" /><rect x="16" y="16" width="6" height="6" rx="1" /><path d="M12 8v4M5 16v-4h14v4" /></symbol>
         <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4" /><path d="M2 21c0-4 3-6 7-6s7 2 7 6M16 4a4 4 0 0 1 0 8M22 21c0-3-1.5-5-4-5.6" /></symbol>
+        <symbol id="i-play" viewBox="0 0 24 24"><path class="fill" d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z" /></symbol>
+        <symbol id="i-pause" viewBox="0 0 24 24"><rect class="fill" x="6" y="4" width="4" height="16" rx="1" /><rect class="fill" x="14" y="4" width="4" height="16" rx="1" /></symbol>
         <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7Z" /></symbol>
         <symbol id="i-github" viewBox="0 0 24 24"><path class="fill" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3" /></symbol>
         <symbol id="i-linkedin" viewBox="0 0 24 24"><path class="fill" d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.3ZM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1Zm1.8 13.1H3.6V9h3.5v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z" /></symbol>
@@ -252,40 +254,57 @@
             <p class="eyebrow">// projetos em destaque</p>
             <h2 class="section__title" id="projetos-title">Problemas reais, resolvidos de ponta a ponta</h2>
             <p class="section__lead">
-              Cada projeto abaixo começa com um problema concreto, não com uma lista de tecnologias.
-              Todos estão no ar: dá para testar agora.
+              Nada de print estático: os vídeos abaixo são gravações reais dos apps em uso.
+              Cada um começa com um problema concreto, e os capítulos mostram a solução acontecendo.
             </p>
           </header>
 
-          <!-- ---------- CASE 01: FocoWave ---------- -->
-          <article class="case reveal" aria-labelledby="case-focowave">
+          <!--
+            ============================================================
+            CASE STUDIES EM VÍDEO
+            - Cada vídeo é uma gravação real do app em uso (sem som, em loop).
+            - O vídeo só é baixado quando chega perto da tela (data-src)
+              e pausa quando sai dela (ver main.js → "VÍDEOS DOS PROJETOS").
+            - Os itens de "A solução técnica" são CAPÍTULOS do vídeo:
+              data-at = segundo em que o trecho começa. Clicar pula para ele.
+            ============================================================
+          -->
+
+          <!-- ---------- CASE 01: FocoWave (mockup de celular) ---------- -->
+          <article class="case case--phone reveal" data-tone="focowave" aria-labelledby="case-focowave">
             <div class="case__media">
-              <div class="browser">
-                <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span><em>focowaves.netlify.app</em></div>
-                <img src="./assets/images/focowave.webp" srcset="./assets/images/focowave-640.webp 640w, ./assets/images/focowave.webp 671w" sizes="(min-width: 1024px) 560px, calc(100vw - 4rem)" alt="Tela de login do FocoWave com opção de entrar com Google ou como visitante" width="671" height="581" loading="lazy" decoding="async" />
+              <div class="phone">
+                <div class="phone__island" aria-hidden="true"></div>
+                <div class="player" data-player>
+                  <video class="player__video" muted playsinline loop preload="none"
+                    data-src="./assets/video/focowave.mp4" data-poster="./assets/video/focowave-poster.webp"
+                    width="600" height="1200" aria-label="Demonstração em vídeo do FocoWave: entrada como visitante, timer com sons e dashboard de progresso"></video>
+                  <span class="player__live" aria-hidden="true"><i></i>demo real</span>
+                  <button class="player__toggle" type="button" aria-label="Pausar demonstração">
+                    <svg class="icon icon--pause" aria-hidden="true"><use href="#i-pause"></use></svg>
+                    <svg class="icon icon--play" aria-hidden="true"><use href="#i-play"></use></svg>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div class="case__body">
-              <p class="case__index">01 · Produtividade</p>
+              <p class="case__index"><span>01</span> Produtividade</p>
               <h3 class="case__title" id="case-focowave">FocoWave</h3>
               <p class="case__pitch">Timer Pomodoro que transforma foco em hábito visível.</p>
 
               <div class="case__block">
                 <h4 class="case__label">O problema</h4>
-                <p>
-                  Timers comuns não criam hábito: você usa, fecha a aba e não sabe se está evoluindo.
-                  Muitos ainda pedem cadastro antes de você poder testar.
-                </p>
+                <p>Timers comuns não criam hábito: você usa, fecha a aba e não sabe se está evoluindo. Muitos ainda pedem cadastro antes de você poder testar.</p>
               </div>
 
               <div class="case__block">
-                <h4 class="case__label">A solução técnica</h4>
-                <ul class="case__list">
-                  <li><strong>Começo sem atrito:</strong> login Google via Firebase Auth <em>ou</em> modo visitante com persistência local completa.</li>
-                  <li><strong>Progresso visível:</strong> <em>streak</em> diário e dashboard analítico com Chart.js.</li>
-                  <li><strong>Deploy sem surpresa:</strong> checklist de domínios autorizados do Firebase documentado, a causa mais comum de falha de login em produção.</li>
-                </ul>
+                <h4 class="case__label">A solução técnica <em>· clique para ver no vídeo</em></h4>
+                <ol class="chapters">
+                  <li><button class="chapter" type="button" data-at="0"><span class="chapter__bar"><i></i></span><strong>Começo sem atrito</strong><span>Login Google via Firebase Auth <em>ou</em> modo visitante com persistência local completa.</span></button></li>
+                  <li><button class="chapter" type="button" data-at="3"><span class="chapter__bar"><i></i></span><strong>Foco com contexto</strong><span>Timer configurável, sons de fundo e favoritos que se reorganizam sozinhos.</span></button></li>
+                  <li><button class="chapter" type="button" data-at="9.5"><span class="chapter__bar"><i></i></span><strong>Progresso visível</strong><span><em>Streak</em> diário, dashboard com Chart.js e temas claro/escuro.</span></button></li>
+                </ol>
               </div>
 
               <ul class="tags" aria-label="Stack utilizada">
@@ -294,7 +313,7 @@
 
               <div class="case__links">
                 <a class="btn btn--primary btn--sm" href="https://focowaves.netlify.app/" target="_blank" rel="noopener noreferrer">
-                  Ver ao vivo <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                  Testar ao vivo <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
                 </a>
                 <a class="btn btn--ghost btn--sm" href="https://github.com/PatrickCaramico/FocoWave" target="_blank" rel="noopener noreferrer">
                   <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg> Código
@@ -303,35 +322,41 @@
             </div>
           </article>
 
-          <!-- ---------- CASE 02: ClickTime V3 ---------- -->
-          <article class="case case--reverse reveal" aria-labelledby="case-clicktime">
+          <!-- ---------- CASE 02: ClickTime V3 (navegador) ---------- -->
+          <article class="case case--reverse reveal" data-tone="clicktime" aria-labelledby="case-clicktime">
             <div class="case__media">
               <div class="browser">
                 <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span><em>clicktimev3.netlify.app</em></div>
-                <img src="./assets/images/clicktime.webp" srcset="./assets/images/clicktime-640.webp 640w, ./assets/images/clicktime.webp 1093w" sizes="(min-width: 1024px) 560px, calc(100vw - 4rem)" alt="Tela de login do ClickTime V3 com acesso por perfil e opção de convidado" width="1093" height="859" loading="lazy" decoding="async" />
+                <div class="player" data-player>
+                  <video class="player__video" muted playsinline loop preload="none"
+                    data-src="./assets/video/clicktime.mp4" data-poster="./assets/video/clicktime-poster.webp"
+                    width="1280" height="800" aria-label="Demonstração em vídeo do ClickTime V3: login como administrador, timer com nome de evento e troca de temas"></video>
+                  <span class="player__live" aria-hidden="true"><i></i>demo real</span>
+                  <button class="player__toggle" type="button" aria-label="Pausar demonstração">
+                    <svg class="icon icon--pause" aria-hidden="true"><use href="#i-pause"></use></svg>
+                    <svg class="icon icon--play" aria-hidden="true"><use href="#i-play"></use></svg>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div class="case__body">
-              <p class="case__index">02 · Gestão de tempo e acesso</p>
+              <p class="case__index"><span>02</span> Gestão de tempo e acesso</p>
               <h3 class="case__title" id="case-clicktime">ClickTime V3</h3>
               <p class="case__pitch">Timer de foco com controle de acesso por perfil e regras de sessão.</p>
 
               <div class="case__block">
                 <h4 class="case__label">O problema</h4>
-                <p>
-                  Quando várias pessoas usam o mesmo sistema, é preciso definir quem pode fazer o quê
-                  e por quanto tempo. E a sessão não pode expirar no meio de uma contagem.
-                </p>
+                <p>Quando várias pessoas usam o mesmo sistema, é preciso definir quem pode fazer o quê e por quanto tempo. E a sessão não pode expirar no meio de uma contagem.</p>
               </div>
 
               <div class="case__block">
-                <h4 class="case__label">A solução técnica</h4>
-                <ul class="case__list">
-                  <li><strong>Três perfis</strong> (admin, usuário, convidado) com limites próprios: sessões de 2h, 45 min e permissões distintas.</li>
-                  <li><strong>Sessão inteligente:</strong> a expiração é adiada enquanto o timer roda, com carência configurável quando ele para.</li>
-                  <li><strong>Painel admin</strong> com busca, filtro por perfil, edição e exclusão de usuários, além de recuperação de acesso com captcha.</li>
-                </ul>
+                <h4 class="case__label">A solução técnica <em>· clique para ver no vídeo</em></h4>
+                <ol class="chapters">
+                  <li><button class="chapter" type="button" data-at="0"><span class="chapter__bar"><i></i></span><strong>Login por perfil</strong><span>Admin, usuário e convidado, cada um com limites próprios (sessões de 2h e 45 min).</span></button></li>
+                  <li><button class="chapter" type="button" data-at="8.2"><span class="chapter__bar"><i></i></span><strong>Sessão inteligente</strong><span>A expiração é adiada enquanto o timer roda, com carência configurável quando ele para.</span></button></li>
+                  <li><button class="chapter" type="button" data-at="14.5"><span class="chapter__bar"><i></i></span><strong>Painel admin e temas</strong><span>Gestão de usuários, duração de sessão e presets visuais aplicados em tempo real.</span></button></li>
+                </ol>
               </div>
 
               <ul class="tags" aria-label="Stack utilizada">
@@ -340,7 +365,7 @@
 
               <div class="case__links">
                 <a class="btn btn--primary btn--sm" href="https://clicktimev3.netlify.app/app/html/login.html" target="_blank" rel="noopener noreferrer">
-                  Ver ao vivo <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                  Testar ao vivo <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
                 </a>
                 <a class="btn btn--ghost btn--sm" href="https://github.com/PatrickCaramico/ClickTime_V3" target="_blank" rel="noopener noreferrer">
                   <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg> Código
@@ -350,35 +375,41 @@
             </div>
           </article>
 
-          <!-- ---------- CASE 03: ClickColor ---------- -->
-          <article class="case reveal" aria-labelledby="case-clickcolor">
+          <!-- ---------- CASE 03: ClickColor (navegador) ---------- -->
+          <article class="case reveal" data-tone="clickcolor" aria-labelledby="case-clickcolor">
             <div class="case__media">
               <div class="browser">
                 <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span><em>clickcolors.netlify.app</em></div>
-                <img src="./assets/images/clickcolor.webp" srcset="./assets/images/clickcolor-640.webp 640w, ./assets/images/clickcolor.webp 1400w" sizes="(min-width: 1024px) 560px, calc(100vw - 4rem)" alt="Gerador de paletas ClickColor exibindo cinco cores com códigos HEX" width="1400" height="635" loading="lazy" decoding="async" />
+                <div class="player" data-player>
+                  <video class="player__video" muted playsinline loop preload="none"
+                    data-src="./assets/video/clickcolor.mp4" data-poster="./assets/video/clickcolor-poster.webp"
+                    width="1280" height="800" aria-label="Demonstração em vídeo do ClickColor: geração de paletas, bloqueio de cores, simulação de daltonismo e preview em site"></video>
+                  <span class="player__live" aria-hidden="true"><i></i>demo real</span>
+                  <button class="player__toggle" type="button" aria-label="Pausar demonstração">
+                    <svg class="icon icon--pause" aria-hidden="true"><use href="#i-pause"></use></svg>
+                    <svg class="icon icon--play" aria-hidden="true"><use href="#i-play"></use></svg>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div class="case__body">
-              <p class="case__index">03 · Ferramenta para designers e devs</p>
+              <p class="case__index"><span>03</span> Ferramenta para designers e devs</p>
               <h3 class="case__title" id="case-clickcolor">ClickColor</h3>
               <p class="case__pitch">Gerador de paletas que verifica acessibilidade, não só estética.</p>
 
               <div class="case__block">
                 <h4 class="case__label">O problema</h4>
-                <p>
-                  Escolher uma paleta bonita é fácil. Difícil é garantir que ela seja legível para todos,
-                  inclusive para pessoas com daltonismo, e levá-la pronta para o código.
-                </p>
+                <p>Escolher uma paleta bonita é fácil. Difícil é garantir que ela seja legível para todos, inclusive para pessoas com daltonismo, e levá-la pronta para o código.</p>
               </div>
 
               <div class="case__block">
-                <h4 class="case__label">A solução técnica</h4>
-                <ul class="case__list">
-                  <li><strong>Harmonia por HSL:</strong> gera paletas a partir de uma cor HEX base, com bloqueio de cores e atalho de teclado.</li>
-                  <li><strong>Acessibilidade embutida:</strong> cálculo de contraste WCAG AA e simulação de protanopia, deuteranopia, tritanopia e acromatopsia.</li>
-                  <li><strong>Pronto para usar:</strong> exporta HEX/RGB/HSL/CSS Variables, mostra um preview em mini-site e guarda o histórico em localStorage.</li>
-                </ul>
+                <h4 class="case__label">A solução técnica <em>· clique para ver no vídeo</em></h4>
+                <ol class="chapters">
+                  <li><button class="chapter" type="button" data-at="0"><span class="chapter__bar"><i></i></span><strong>Paletas instantâneas</strong><span>Geração harmônica via HSL com um clique ou com a barra de espaço.</span></button></li>
+                  <li><button class="chapter" type="button" data-at="3.3"><span class="chapter__bar"><i></i></span><strong>Acessibilidade embutida</strong><span>Bloqueio de cores, selo WCAG AA em cada cor e simulação de daltonismo.</span></button></li>
+                  <li><button class="chapter" type="button" data-at="9.4"><span class="chapter__bar"><i></i></span><strong>Preview e exportação</strong><span>Aplica a cor num mini-site real e exporta HEX, RGB, HSL e CSS Variables.</span></button></li>
+                </ol>
               </div>
 
               <ul class="tags" aria-label="Stack utilizada">
@@ -387,7 +418,7 @@
 
               <div class="case__links">
                 <a class="btn btn--primary btn--sm" href="https://clickcolors.netlify.app/" target="_blank" rel="noopener noreferrer">
-                  Ver ao vivo <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                  Testar ao vivo <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
                 </a>
                 <a class="btn btn--ghost btn--sm" href="https://github.com/PatrickCaramico/ClickColor" target="_blank" rel="noopener noreferrer">
                   <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg> Código
