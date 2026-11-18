@@ -397,22 +397,78 @@ code {
 .hero__socials { display: flex; gap: 0.5rem; }
 
 /* Foto + terminal */
-.hero__visual { position: relative; max-width: 320px; margin-inline: auto; width: 100%; }
-.profile {
-  aspect-ratio: 1;
-  border-radius: 24px;
-  overflow: hidden;
+.hero__visual { position: relative; max-width: 340px; margin-inline: auto; width: 100%; padding-top: 2.5rem; }
+
+/* Retrato com efeito pop-out: o cartão (palco) tem altura fixa e a foto,
+   mais alta que ele, "sai" pela borda de cima. */
+.portrait { position: relative; margin: 0; }
+.portrait__stage {
+  position: absolute;
+  inset: 18% 0 0 0;               /* o palco começa abaixo do topo da cabeça */
+  border-radius: 28px;
   border: 1px solid var(--border-strong);
   box-shadow: var(--shadow);
-  background: var(--surface);
-  width: 78%;
+  overflow: hidden;
+  background:
+    radial-gradient(60% 55% at 50% 30%, color-mix(in srgb, var(--accent) 38%, transparent), transparent 70%),
+    linear-gradient(160deg, var(--surface-2), var(--surface));
 }
-.profile__img { width: 100%; height: 100%; object-fit: cover; }
+/* anéis concêntricos + grade sutil atrás do retrato */
+.portrait__stage::before,
+.portrait__stage::after { content: ''; position: absolute; inset: 0; }
+.portrait__stage::before {
+  background: repeating-radial-gradient(circle at 50% 28%, transparent 0 46px, color-mix(in srgb, var(--accent) 16%, transparent) 46px 47px);
+  mask-image: radial-gradient(circle at 50% 28%, #000 20%, transparent 62%);
+}
+.portrait__stage::after {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--text) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--text) 5%, transparent) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(to bottom, transparent, #000 60%);
+}
+.portrait__img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  /* corta só embaixo e nas laterais, com o mesmo raio do palco;
+     em cima fica livre para a cabeça ultrapassar a borda */
+  clip-path: inset(-40% 0 0 0 round 0 0 28px 28px);
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.35));
+}
+
+/* Etiquetas flutuantes */
+.portrait__chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  white-space: nowrap;
+  color: var(--text);
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  border: 1px solid var(--border-strong);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow);
+}
+.portrait__chip .icon { width: 0.95rem; height: 0.95rem; color: var(--accent); }
+.portrait__chip--a { top: 30%; left: -6%; color: var(--accent); }
+.portrait__chip--b { top: 52%; right: -6%; }
+@media (prefers-reduced-motion: no-preference) {
+  .portrait__chip--a { animation: float 6s ease-in-out infinite; }
+  .portrait__chip--b { animation: float 6s ease-in-out -3s infinite; }
+}
+@keyframes float { 50% { transform: translateY(-6px); } }
 
 .terminal {
   position: relative;
-  margin: -4.5rem 0 0 auto;
-  width: 82%;
+  margin: -1.75rem 0 0 auto;
+  width: 78%;
+  transform: translateX(8%);
   background: #0d1117;            /* terminal é sempre escuro, nos dois temas */
   color: #c9d1d9;
   border: 1px solid #2a3340;
@@ -937,7 +993,7 @@ code {
 
   .hero { padding-block: 5rem 4rem; }
   .hero__grid { grid-template-columns: 1.35fr 1fr; gap: 4rem; }
-  .hero__visual { max-width: 400px; margin-right: 0; }
+  .hero__visual { max-width: 380px; margin-right: 0; }
 
   .section { padding-block: 6.5rem; }
 

@@ -61,7 +61,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;700&display=swap"
     />
 
-    <link rel="preload" as="image" href="./assets/images/patrick-souza.webp" type="image/webp" />
+    <link rel="preload" as="image" href="./assets/images/patrick-souza-cutout.webp" type="image/webp" />
     <link rel="stylesheet" href="./assets/css/style.css" />
 
     <!-- Dados estruturados (Google entende quem você é) -->
@@ -72,7 +72,7 @@
         "name": "Patrick Souza",
         "jobTitle": "Desenvolvedor Full-Stack",
         "url": "https://SEU-DOMINIO.com/",
-        "image": "https://SEU-DOMINIO.com/assets/images/patrick-souza.webp",
+        "image": "https://SEU-DOMINIO.com/assets/images/patrick-souza-cutout.webp",
         "sameAs": [
           "https://github.com/PatrickCaramico",
           "https://www.linkedin.com/in/patrickcaramico/"
@@ -204,15 +204,25 @@
 
           <!-- Foto + "cartão de terminal" com o resumo do perfil -->
           <div class="hero__visual">
-            <figure class="profile">
+            <!--
+              Retrato recortado (fundo transparente) sobre um "palco" com a cor
+              do portfólio. A cabeça ultrapassa a borda superior do cartão
+              (efeito pop-out) via clip-path no .portrait__img.
+            -->
+            <figure class="portrait">
+              <div class="portrait__stage" aria-hidden="true"></div>
               <img
-                src="./assets/images/patrick-souza.webp"
-                alt="Foto de Patrick Souza"
-                width="400"
-                height="400"
-                class="profile__img"
+                src="./assets/images/patrick-souza-cutout.webp"
+                alt="Foto de Patrick Souza, de camisa azul e braços cruzados"
+                width="760"
+                height="927"
+                class="portrait__img"
                 fetchpriority="high"
               />
+              <span class="portrait__chip portrait__chip--a" aria-hidden="true">&lt;/&gt; Full-Stack</span>
+              <span class="portrait__chip portrait__chip--b" aria-hidden="true">
+                <svg class="icon" aria-hidden="true"><use href="#i-network"></use></svg> Suporte &amp; Redes
+              </span>
             </figure>
             <div class="terminal" aria-hidden="true">
               <div class="terminal__bar"><span></span><span></span><span></span></div>
