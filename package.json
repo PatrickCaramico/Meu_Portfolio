@@ -1,7 +1,7 @@
 {
-  "name": "portfolio_v1",
-  "version": "1.0.0",
-  "description": "Portfólio SPA Profissional usando HTML, CSS e JS",
+  "name": "portfolio-patrick-souza",
+  "version": "4.0.0",
+  "description": "Portfólio de Patrick Souza — Desenvolvedor Full-Stack (HTML, CSS e JavaScript puro)",
   "main": "index.html",
   "scripts": {
     "start": "serve .",
@@ -17,5 +17,6 @@
   "license": "MIT",
   "devDependencies": {
     "serve": "^14.2.4"
-  }
+  },
+  "private": true
 }

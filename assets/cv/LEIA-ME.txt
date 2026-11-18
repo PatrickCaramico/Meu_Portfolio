@@ -1,0 +1,5 @@
+Coloque aqui seu currículo com o nome exato:
+
+  Patrick-Souza-CV.pdf
+
+Os botões "CV" e "Baixar CV" do site apontam para assets/cv/Patrick-Souza-CV.pdf.

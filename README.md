@@ -1,71 +1,62 @@
-# Portfólio v3 — Patrick Souza
+# Portfólio v4 — Patrick Souza
 
-Portfólio pessoal em formato SPA (Single Page Application), atualmente na versão **v3**, com foco em design moderno, performance e experiência do usuário.
+Portfólio de **Patrick Souza**, desenvolvedor Full-Stack e Analista de Sistemas. Página única em HTML, CSS e JavaScript puro, **sem frameworks e sem bibliotecas de terceiros em JS**. Foi feita para carregar rápido no celular (o link costuma ser aberto pelo LinkedIn ou WhatsApp).
 
-## ✨ Visão geral
+## O que tem na página
 
-Este projeto apresenta:
+| Seção | Objetivo |
+|---|---|
+| **Hero** | Proposta de valor, CTAs (Ver projetos, Baixar CV, GitHub, LinkedIn) e faixa de prova |
+| **Projetos** | Case studies no formato *Problema → Solução técnica → Stack → Links* (FocoWave, ClickTime V3, ClickColor) + Automação & IA |
+| **Diferencial** | Como a experiência em suporte, redes e infra melhora o código, com exemplos reais |
+| **Stack** | Tecnologias agrupadas, indicando **onde** cada uma foi usada (sem barras de "%") |
+| **Trajetória** | Suporte & Infra → Sistemas de Informação → Full-Stack |
+| **Contato** | E-mail (com botão copiar), LinkedIn e GitHub |
 
-- **Hero** com destaque profissional e CTA.
-- **Sobre mim** com foco em trajetória e direcionamento técnico.
-- **Projetos recentes** com links de demo e GitHub.
-- **Habilidades** com layout visual por grupos (Linguagens & Frameworks, Design & Layout, Ferramentas & Plataformas), incluindo ícones em estilo de referência.
-- **Contato** com formulário e links sociais.
-- **Tema claro/escuro** com persistência via `localStorage`.
-- **Animações de entrada** com `IntersectionObserver`.
+## Destaques técnicos
 
-## 🧱 Stack utilizada
+- **Acessibilidade:** HTML semântico, link "pular para o conteúdo", foco visível, botões reais com `aria-label`/`aria-expanded`, contraste AA nos dois temas e respeito a `prefers-reduced-motion`.
+- **Tema claro/escuro:** segue o sistema operacional, guarda a escolha do usuário e não pisca ao carregar (script inline no `<head>`).
+- **Performance:**
+  - ícones em sprite SVG inline (sem CDN de ícones)
+  - imagens em WebP com `width`/`height` e `loading="lazy"`
+  - uma única requisição de fontes
+  - JS com `defer`
+- **SEO e compartilhamento:** meta description, Open Graph/Twitter Card com `og-image.png` (1200×630) e JSON-LD `Person`.
+- **Conteúdo visível sem JS:** as animações de entrada só escondem elementos quando o JS está ativo.
 
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- Phosphor Icons
-- Devicon (ícones de tecnologias)
-- Google Fonts (Inter)
-
-## 📁 Estrutura do projeto
+## Estrutura
 
 ```text
-Portfolio_v3/
-├── index.html
+.
+├── index.html              # conteúdo e marcação (comentado por seção)
 ├── assets/
-│   ├── css/
-│   │   └── style.css
-│   ├── images/
-│   └── js/
-│       └── main.js
-└── config/
-    └── package.json
+│   ├── css/style.css       # tokens de design, temas e layout mobile-first
+│   ├── js/main.js          # tema, menu, link ativo, animações, copiar e-mail
+│   ├── images/             # WebP otimizados, favicon e og-image
+│   └── cv/                 # coloque aqui Patrick-Souza-CV.pdf
+└── package.json            # script de servidor local (opcional)
 ```
 
-## 🚀 Como executar localmente
+## Antes de publicar (checklist)
 
-### Opção 1 (rápida, sem instalar nada no projeto)
+Procure por `TODO` no `index.html`:
 
-Abra o arquivo `index.html` no navegador.
+- [ ] Coloque o currículo em `assets/cv/Patrick-Souza-CV.pdf`.
+- [ ] Troque `SEU-EMAIL@exemplo.com` (2 ocorrências) pelo seu e-mail.
+- [ ] Troque `https://SEU-DOMINIO.com/` pela URL final (canonical, Open Graph e JSON-LD).
+- [ ] (Opcional) Inclua o ano de conclusão do curso e o tempo de experiência em suporte na faixa de prova e na trajetória.
 
-### Opção 2 (servidor local recomendado)
+Depois de publicar, teste a prévia do link no [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/).
 
-Na raiz do projeto, execute:
+## Rodar localmente
 
 ```bash
 npx serve .
 ```
 
-Depois acesse a URL exibida no terminal (geralmente `http://localhost:3000`).
+Ou abra o `index.html` direto no navegador.
 
-## 🎨 Personalização
+## Licença
 
-- Conteúdo e seções: `index.html`
-- Estilos visuais e responsividade: `assets/css/style.css`
-- Interações (menu mobile, tema, animações, formulário): `assets/js/main.js`
-
-## 📌 Próximas melhorias sugeridas
-
-- Ajustar links reais de contato (LinkedIn, GitHub e e-mail).
-- Integrar envio real do formulário (ex.: EmailJS, Formspree ou backend próprio).
-- Otimizar imagens para web (compressão e formatos modernos).
-
-## 📄 Licença
-
-Este projeto está sob licença MIT, conforme definido em `config/package.json`.
+MIT.

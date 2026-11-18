@@ -2,485 +2,593 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Patrick Souza | Desenvolvedor Web</title>
-    <!-- Favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--
+      ============================================================
+      SEO + PRÉVIA DE COMPARTILHAMENTO (LinkedIn / WhatsApp)
+      TODO: troque TODAS as ocorrências de https://SEU-DOMINIO.com/
+      pela URL final onde o portfólio será publicado.
+      (WhatsApp/LinkedIn exigem URL absoluta na og:image.)
+      ============================================================
+    -->
+    <title>Patrick Souza — Desenvolvedor Full-Stack</title>
+    <meta
+      name="description"
+      content="Patrick Souza, desenvolvedor Full-Stack e Analista de Sistemas. JavaScript, PHP, Node.js e MySQL, com bagagem em suporte técnico, redes e infraestrutura. Veja os case studies de FocoWave, ClickTime e ClickColor."
+    />
+    <meta name="author" content="Patrick Souza" />
+    <link rel="canonical" href="https://SEU-DOMINIO.com/" />
+    <meta name="theme-color" content="#0b0e13" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Patrick Souza — Desenvolvedor Full-Stack" />
+    <meta
+      property="og:description"
+      content="Sistemas web de ponta a ponta, com a visão de quem já esteve no suporte e na infraestrutura."
+    />
+    <meta property="og:url" content="https://SEU-DOMINIO.com/" />
+    <meta property="og:image" content="https://SEU-DOMINIO.com/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
     <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg" />
-    <!-- Google Fonts -->
+
+    <!--
+      Aplica o tema ANTES da pintura para evitar o "flash" de tema errado.
+      Também marca <html class="js"> para que as animações de entrada
+      só escondam conteúdo quando o JavaScript estiver disponível.
+    -->
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.classList.add('js');
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Fontes: Space Grotesk (títulos), Inter (texto), JetBrains Mono (rótulos) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;700&display=swap"
     />
-    <!-- Phosphor Icons (para ícones modernos e limpos) -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <!-- Devicon (ícones coloridos de tecnologias) -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-    />
-    <!-- Estilos padrão -->
+
+    <link rel="preload" as="image" href="./assets/images/patrick-souza.webp" type="image/webp" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- Dados estruturados (Google entende quem você é) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Patrick Souza",
+        "jobTitle": "Desenvolvedor Full-Stack",
+        "url": "https://SEU-DOMINIO.com/",
+        "image": "https://SEU-DOMINIO.com/assets/images/patrick-souza.webp",
+        "sameAs": [
+          "https://github.com/PatrickCaramico",
+          "https://www.linkedin.com/in/patrickcaramico/"
+        ],
+        "knowsAbout": ["JavaScript", "PHP", "Node.js", "MySQL", "HTML5", "CSS3", "Redes de computadores", "Suporte técnico", "n8n"]
+      }
+    </script>
   </head>
 
   <body>
-    <!-- Navegação Estática/Fixa -->
-    <header id="header" class="header">
-      <nav class="nav container glass">
-        <a href="#" class="nav__logo">
-          <span class="text-gradient">Patrick</span>.dev
+    <!--
+      ============================================================
+      SPRITE DE ÍCONES (SVG inline)
+      Substitui as bibliotecas Phosphor + Devicon via CDN:
+      zero requisições extras e zero JavaScript de terceiros.
+      Uso: <svg class="icon"><use href="#i-github"></use></svg>
+      ============================================================
+    -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></symbol>
+        <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" /></symbol>
+        <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14" /></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2" /><path d="M5 15V5a2 2 0 0 1 2-2h10" /></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10" /></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" /></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" /></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6Z" /><path d="m9 12 2 2 4-4" /></symbol>
+        <symbol id="i-network" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="6" rx="1" /><rect x="2" y="16" width="6" height="6" rx="1" /><rect x="16" y="16" width="6" height="6" rx="1" /><path d="M12 8v4M5 16v-4h14v4" /></symbol>
+        <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4" /><path d="M2 21c0-4 3-6 7-6s7 2 7 6M16 4a4 4 0 0 1 0 8M22 21c0-3-1.5-5-4-5.6" /></symbol>
+        <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7Z" /></symbol>
+        <symbol id="i-github" viewBox="0 0 24 24"><path class="fill" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3" /></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path class="fill" d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.3ZM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1Zm1.8 13.1H3.6V9h3.5v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z" /></symbol>
+      </defs>
+    </svg>
+
+    <!-- Link "pular para o conteúdo" (acessibilidade via teclado) -->
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- ===================== HEADER / NAVEGAÇÃO ===================== -->
+    <header class="header" id="header">
+      <nav class="nav container" aria-label="Navegação principal">
+        <a href="#topo" class="nav__logo">
+          <span class="nav__logo-mark" aria-hidden="true">PS</span>
+          <span class="nav__logo-text">Patrick Souza</span>
         </a>
 
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#home" class="nav__link active-link">Início</a>
-            </li>
-            <li class="nav__item">
-              <a href="#sobre" class="nav__link">Sobre</a>
-            </li>
-            <li class="nav__item">
-              <a href="#projetos" class="nav__link">Projetos</a>
-            </li>
-            <li class="nav__item">
-              <a href="#habilidades" class="nav__link">Habilidades</a>
-            </li>
-            <li class="nav__item">
-              <a href="#contato" class="nav__link nav__link-button">Contato</a>
-            </li>
-          </ul>
-        </div>
+        <ul class="nav__list" id="nav-menu">
+          <li><a href="#projetos" class="nav__link">Projetos</a></li>
+          <li><a href="#diferencial" class="nav__link">Diferencial</a></li>
+          <li><a href="#stack" class="nav__link">Stack</a></li>
+          <li><a href="#trajetoria" class="nav__link">Trajetória</a></li>
+          <li><a href="#contato" class="nav__link">Contato</a></li>
+        </ul>
 
-        <div class="nav__btns">
-          <!-- Theme change button -->
-          <i class="ph ph-moon change-theme" id="theme-button"></i>
+        <div class="nav__actions">
+          <button class="icon-btn" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">
+            <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun"></use></svg>
+            <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon"></use></svg>
+          </button>
 
-          <!-- Toggle button para mobile -->
-          <div class="nav__toggle" id="nav-toggle">
-            <i class="ph ph-list"></i>
-          </div>
+          <!-- TODO: coloque seu currículo em assets/cv/Patrick-Souza-CV.pdf -->
+          <a class="btn btn--primary btn--sm nav__cv" href="./assets/cv/Patrick-Souza-CV.pdf" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+            CV
+          </a>
+
+          <button
+            class="icon-btn nav__toggle"
+            id="nav-toggle"
+            type="button"
+            aria-label="Abrir menu"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+          >
+            <svg class="icon icon--open" aria-hidden="true"><use href="#i-menu"></use></svg>
+            <svg class="icon icon--close" aria-hidden="true"><use href="#i-close"></use></svg>
+          </button>
         </div>
       </nav>
     </header>
 
-    <main class="main">
-      <!-- SEÇÃO HERO -->
-      <section class="home section" id="home">
-        <div class="home__container container grid">
-          <div class="home__data hidden">
-            <h3 class="home__subtitle">Olá, eu sou</h3>
-            <h1 class="home__title">Patrick Souza</h1>
-            <h2 class="home__profession">
-              Desenvolvedor Web & <br /><span class="text-gradient"
-                >Full Stack</span
-              >
-            </h2>
-            <p class="home__description">
-              Criando soluções web inovadoras, responsivas e focadas na
-              conversão. Transformo ideias complexas em interfaces elegantes e
-              funcionais.
+    <main id="conteudo">
+      <!-- ===================== HERO (primeiros 10 segundos) ===================== -->
+      <section class="hero" id="topo" aria-labelledby="hero-title">
+        <div class="container hero__grid">
+          <div class="hero__content">
+            <p class="badge">
+              <span class="badge__dot" aria-hidden="true"></span>
+              Disponível para oportunidades
             </p>
-            <div class="home__buttons">
-              <a href="#projetos" class="button button--primary"
-                >Ver Projetos <i class="ph ph-arrow-right"></i
-              ></a>
-              <a href="#contato" class="button button--ghost">Fale Comigo</a>
+
+            <h1 class="hero__title" id="hero-title">
+              Desenvolvo sistemas web de ponta a ponta —
+              <span class="accent">do servidor à interface.</span>
+            </h1>
+
+            <p class="hero__lead">
+              Sou <strong>Patrick Souza</strong>, desenvolvedor Full-Stack e Analista de Sistemas
+              (JavaScript, PHP, Node.js, MySQL). Antes de programar, trabalhei com suporte técnico,
+              redes e infraestrutura. Por isso escrevo código que aguenta falhas reais e que o
+              usuário final entende.
+            </p>
+
+            <div class="hero__ctas">
+              <a href="#projetos" class="btn btn--primary">
+                Ver projetos
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              </a>
+              <a href="./assets/cv/Patrick-Souza-CV.pdf" class="btn btn--ghost" download>
+                <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+                Baixar CV
+              </a>
+              <div class="hero__socials">
+                <a class="icon-btn icon-btn--outline" href="https://github.com/PatrickCaramico" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Patrick Souza (abre em nova aba)">
+                  <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+                </a>
+                <a class="icon-btn icon-btn--outline" href="https://www.linkedin.com/in/patrickcaramico/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Patrick Souza (abre em nova aba)">
+                  <svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg>
+                </a>
+              </div>
             </div>
           </div>
 
-          <div class="home__img-wrapper hidden align-right">
-            <!-- Espaço para a foto de perfil com Glassmorphism em volta -->
-            <div class="home__blob glass">
+          <!-- Foto + "cartão de terminal" com o resumo do perfil -->
+          <div class="hero__visual">
+            <figure class="profile">
               <img
-                src="./assets/images/Perfil_git.jpg"
+                src="./assets/images/patrick-souza.webp"
                 alt="Foto de Patrick Souza"
-                class="home__img"
-                id="profile-img"
+                width="400"
+                height="400"
+                class="profile__img"
+                fetchpriority="high"
               />
+            </figure>
+            <div class="terminal" aria-hidden="true">
+              <div class="terminal__bar"><span></span><span></span><span></span></div>
+              <pre class="terminal__body"><span class="t-prompt">$</span> whoami
+<span class="t-out">dev full-stack · analista de sistemas</span>
+<span class="t-prompt">$</span> cat background.txt
+<span class="t-out">suporte técnico · redes · infra</span>
+<span class="t-prompt">$</span> deploy --status
+<span class="t-ok">✓ 4 projetos no ar</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faixa de prova: fatos rápidos e verificáveis -->
+        <div class="container">
+          <ul class="proof" aria-label="Destaques">
+            <li class="proof__item">
+              <span class="proof__value">4</span>
+              <span class="proof__label">projetos publicados com demo ao vivo</span>
+            </li>
+            <li class="proof__item">
+              <span class="proof__value">SI</span>
+              <!-- TODO: se quiser, inclua o ano de conclusão. Ex.: "Bacharelado em SI · conclusão 2026" -->
+              <span class="proof__label">Bacharelado em Sistemas de Informação (em conclusão)</span>
+            </li>
+            <li class="proof__item">
+              <span class="proof__value">Infra</span>
+              <!-- TODO: se quiser, inclua o tempo de experiência. Ex.: "3 anos em Suporte & Redes" -->
+              <span class="proof__label">bagagem em Suporte Técnico, Redes e Infraestrutura</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===================== PROJETOS (CASE STUDIES) ===================== -->
+      <section class="section" id="projetos" aria-labelledby="projetos-title">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow">// projetos em destaque</p>
+            <h2 class="section__title" id="projetos-title">Problemas reais, resolvidos de ponta a ponta</h2>
+            <p class="section__lead">
+              Cada projeto abaixo começa com um problema concreto, não com uma lista de tecnologias.
+              Todos estão no ar: dá para testar agora.
+            </p>
+          </header>
+
+          <!-- ---------- CASE 01: FocoWave ---------- -->
+          <article class="case reveal" aria-labelledby="case-focowave">
+            <div class="case__media">
+              <div class="browser">
+                <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span><em>focowaves.netlify.app</em></div>
+                <img src="./assets/images/focowave.webp" srcset="./assets/images/focowave-640.webp 640w, ./assets/images/focowave.webp 671w" sizes="(min-width: 1024px) 560px, calc(100vw - 4rem)" alt="Tela de login do FocoWave com opção de entrar com Google ou como visitante" width="671" height="581" loading="lazy" decoding="async" />
+              </div>
+            </div>
+
+            <div class="case__body">
+              <p class="case__index">01 · Produtividade</p>
+              <h3 class="case__title" id="case-focowave">FocoWave</h3>
+              <p class="case__pitch">Timer Pomodoro que transforma foco em hábito visível.</p>
+
+              <div class="case__block">
+                <h4 class="case__label">O problema</h4>
+                <p>
+                  Timers comuns não criam hábito: você usa, fecha a aba e não sabe se está evoluindo.
+                  Muitos ainda pedem cadastro antes de você poder testar.
+                </p>
+              </div>
+
+              <div class="case__block">
+                <h4 class="case__label">A solução técnica</h4>
+                <ul class="case__list">
+                  <li><strong>Começo sem atrito:</strong> login Google via Firebase Auth <em>ou</em> modo visitante com persistência local completa.</li>
+                  <li><strong>Progresso visível:</strong> <em>streak</em> diário e dashboard analítico com Chart.js.</li>
+                  <li><strong>Deploy sem surpresa:</strong> checklist de domínios autorizados do Firebase documentado, a causa mais comum de falha de login em produção.</li>
+                </ul>
+              </div>
+
+              <ul class="tags" aria-label="Stack utilizada">
+                <li>JavaScript ES6+</li><li>Firebase Auth</li><li>Chart.js</li><li>localStorage</li><li>HTML5/CSS3</li>
+              </ul>
+
+              <div class="case__links">
+                <a class="btn btn--primary btn--sm" href="https://focowaves.netlify.app/" target="_blank" rel="noopener noreferrer">
+                  Ver ao vivo <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                </a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/PatrickCaramico/FocoWave" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg> Código
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ---------- CASE 02: ClickTime V3 ---------- -->
+          <article class="case case--reverse reveal" aria-labelledby="case-clicktime">
+            <div class="case__media">
+              <div class="browser">
+                <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span><em>clicktimev3.netlify.app</em></div>
+                <img src="./assets/images/clicktime.webp" srcset="./assets/images/clicktime-640.webp 640w, ./assets/images/clicktime.webp 1093w" sizes="(min-width: 1024px) 560px, calc(100vw - 4rem)" alt="Tela de login do ClickTime V3 com acesso por perfil e opção de convidado" width="1093" height="859" loading="lazy" decoding="async" />
+              </div>
+            </div>
+
+            <div class="case__body">
+              <p class="case__index">02 · Gestão de tempo e acesso</p>
+              <h3 class="case__title" id="case-clicktime">ClickTime V3</h3>
+              <p class="case__pitch">Timer de foco com controle de acesso por perfil e regras de sessão.</p>
+
+              <div class="case__block">
+                <h4 class="case__label">O problema</h4>
+                <p>
+                  Quando várias pessoas usam o mesmo sistema, é preciso definir quem pode fazer o quê
+                  e por quanto tempo. E a sessão não pode expirar no meio de uma contagem.
+                </p>
+              </div>
+
+              <div class="case__block">
+                <h4 class="case__label">A solução técnica</h4>
+                <ul class="case__list">
+                  <li><strong>Três perfis</strong> (admin, usuário, convidado) com limites próprios: sessões de 2h, 45 min e permissões distintas.</li>
+                  <li><strong>Sessão inteligente:</strong> a expiração é adiada enquanto o timer roda, com carência configurável quando ele para.</li>
+                  <li><strong>Painel admin</strong> com busca, filtro por perfil, edição e exclusão de usuários, além de recuperação de acesso com captcha.</li>
+                </ul>
+              </div>
+
+              <ul class="tags" aria-label="Stack utilizada">
+                <li>JavaScript ES6+</li><li>Web Storage</li><li>Notifications API</li><li>Fullscreen API</li><li>HTML5/CSS3</li>
+              </ul>
+
+              <div class="case__links">
+                <a class="btn btn--primary btn--sm" href="https://clicktimev3.netlify.app/app/html/login.html" target="_blank" rel="noopener noreferrer">
+                  Ver ao vivo <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                </a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/PatrickCaramico/ClickTime_V3" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg> Código
+                </a>
+              </div>
+              <p class="case__note">Login de demonstração: <code>admin</code> / <code>123456</code></p>
+            </div>
+          </article>
+
+          <!-- ---------- CASE 03: ClickColor ---------- -->
+          <article class="case reveal" aria-labelledby="case-clickcolor">
+            <div class="case__media">
+              <div class="browser">
+                <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span><em>clickcolors.netlify.app</em></div>
+                <img src="./assets/images/clickcolor.webp" srcset="./assets/images/clickcolor-640.webp 640w, ./assets/images/clickcolor.webp 1400w" sizes="(min-width: 1024px) 560px, calc(100vw - 4rem)" alt="Gerador de paletas ClickColor exibindo cinco cores com códigos HEX" width="1400" height="635" loading="lazy" decoding="async" />
+              </div>
+            </div>
+
+            <div class="case__body">
+              <p class="case__index">03 · Ferramenta para designers e devs</p>
+              <h3 class="case__title" id="case-clickcolor">ClickColor</h3>
+              <p class="case__pitch">Gerador de paletas que verifica acessibilidade, não só estética.</p>
+
+              <div class="case__block">
+                <h4 class="case__label">O problema</h4>
+                <p>
+                  Escolher uma paleta bonita é fácil. Difícil é garantir que ela seja legível para todos,
+                  inclusive para pessoas com daltonismo, e levá-la pronta para o código.
+                </p>
+              </div>
+
+              <div class="case__block">
+                <h4 class="case__label">A solução técnica</h4>
+                <ul class="case__list">
+                  <li><strong>Harmonia por HSL:</strong> gera paletas a partir de uma cor HEX base, com bloqueio de cores e atalho de teclado.</li>
+                  <li><strong>Acessibilidade embutida:</strong> cálculo de contraste WCAG AA e simulação de protanopia, deuteranopia, tritanopia e acromatopsia.</li>
+                  <li><strong>Pronto para usar:</strong> exporta HEX/RGB/HSL/CSS Variables, mostra um preview em mini-site e guarda o histórico em localStorage.</li>
+                </ul>
+              </div>
+
+              <ul class="tags" aria-label="Stack utilizada">
+                <li>JavaScript ES6+</li><li>Modelo de cor HSL</li><li>WCAG</li><li>SweetAlert2</li><li>CSS3</li>
+              </ul>
+
+              <div class="case__links">
+                <a class="btn btn--primary btn--sm" href="https://clickcolors.netlify.app/" target="_blank" rel="noopener noreferrer">
+                  Ver ao vivo <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                </a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/PatrickCaramico/ClickColor" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg> Código
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ---------- OUTROS PROJETOS ---------- -->
+          <div class="more reveal">
+            <h3 class="more__title">Automação &amp; IA</h3>
+            <article class="mini" aria-labelledby="mini-gmail">
+              <img src="./assets/images/gmail-spam.webp" alt="" width="416" height="594" loading="lazy" decoding="async" class="mini__img" />
+              <div class="mini__body">
+                <h4 class="mini__name" id="mini-gmail">
+                  <svg class="icon" aria-hidden="true"><use href="#i-bolt"></use></svg>
+                  Gmail Spam Cleaner
+                </h4>
+                <p>
+                  Front-end que dispara um webhook no <strong>n8n</strong>. O fluxo usa a <strong>Gmail API</strong>
+                  para apagar spam em lote e também roda sozinho a cada hora. Interface e automação
+                  conversando por HTTP.
+                </p>
+                <ul class="tags tags--sm" aria-label="Stack utilizada">
+                  <li>n8n</li><li>Gmail API</li><li>Webhooks</li><li>JavaScript</li>
+                </ul>
+                <div class="case__links">
+                  <a class="link" href="https://spam-ia-gmail.netlify.app/" target="_blank" rel="noopener noreferrer">Ver ao vivo <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+                  <a class="link" href="https://github.com/PatrickCaramico/gmail-spam-cleaner" target="_blank" rel="noopener noreferrer">Código <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== DIFERENCIAL (SUPORTE + DEV) ===================== -->
+      <section class="section section--alt" id="diferencial" aria-labelledby="diferencial-title">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow">// por que isso importa para o seu time</p>
+            <h2 class="section__title" id="diferencial-title">Eu já estive do outro lado do chamado</h2>
+            <p class="section__lead">
+              No suporte técnico e na infraestrutura eu vi onde o software quebra de verdade. Hoje levo
+              essa visão para cada linha de código.
+            </p>
+          </header>
+
+          <div class="pillars">
+            <article class="pillar reveal">
+              <span class="pillar__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg></span>
+              <h3 class="pillar__title">Código resiliente</h3>
+              <p>Penso no erro antes de o usuário encontrá-lo: rede instável, navegador antigo, clique duplo, sessão expirada.</p>
+              <p class="pillar__proof"><span>na prática →</span> o ClickTime adia a expiração da sessão enquanto o timer está rodando.</p>
+            </article>
+
+            <article class="pillar reveal">
+              <span class="pillar__icon"><svg class="icon" aria-hidden="true"><use href="#i-network"></use></svg></span>
+              <h3 class="pillar__title">Visão de rede e segurança</h3>
+              <p>Entendo o caminho até o servidor: DNS, HTTP, domínios, autenticação e permissões. Isso evita o clássico "na minha máquina funciona".</p>
+              <p class="pillar__proof"><span>na prática →</span> controle de acesso por perfil no ClickTime e configuração de domínios do Firebase Auth no FocoWave.</p>
+            </article>
+
+            <article class="pillar reveal">
+              <span class="pillar__icon"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg></span>
+              <h3 class="pillar__title">Foco no usuário final</h3>
+              <p>Interfaces claras, mensagens de erro úteis e documentação que outra pessoa consegue seguir.</p>
+              <p class="pillar__proof"><span>na prática →</span> contraste WCAG e simulação de daltonismo no ClickColor; READMEs com passo a passo de deploy.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== STACK (sem barras de %) ===================== -->
+      <section class="section" id="stack" aria-labelledby="stack-title">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow">// stack</p>
+            <h2 class="section__title" id="stack-title">Ferramentas que eu uso, e onde usei</h2>
+          </header>
+
+          <div class="stack reveal">
+            <div class="stack__group">
+              <h3 class="stack__title">Front-end</h3>
+              <ul class="tags">
+                <li>JavaScript ES6+ <small>todos os projetos</small></li>
+                <li>HTML5 semântico</li>
+                <li>CSS3 / Responsivo</li>
+                <li>Bootstrap</li>
+                <li>Chart.js <small>FocoWave</small></li>
+              </ul>
+            </div>
+            <div class="stack__group">
+              <h3 class="stack__title">Back-end &amp; Dados</h3>
+              <!-- TODO: quando publicar um projeto em PHP/MySQL ou Node.js, adicione <small>NomeDoProjeto</small> aqui -->
+              <ul class="tags">
+                <li>PHP</li>
+                <li>Node.js</li>
+                <li>MySQL</li>
+                <li>Firebase Auth <small>FocoWave</small></li>
+                <li>Web Storage <small>ClickTime · ClickColor</small></li>
+              </ul>
+            </div>
+            <div class="stack__group">
+              <h3 class="stack__title">Infra &amp; Ferramentas</h3>
+              <ul class="tags">
+                <li>Git / GitHub</li>
+                <li>Netlify <small>deploy de todos</small></li>
+                <li>Redes &amp; TCP/IP</li>
+                <li>Suporte &amp; troubleshooting</li>
+              </ul>
+            </div>
+            <div class="stack__group">
+              <h3 class="stack__title">Automação &amp; IA</h3>
+              <ul class="tags">
+                <li>n8n <small>Gmail Spam Cleaner</small></li>
+                <li>Webhooks &amp; APIs REST</li>
+                <li>Claude Code</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SEÇÃO SOBRE -->
-      <section class="about section" id="sobre">
-        <div class="about__container container grid">
-          <div class="about__data glass p-8 border-radius hidden">
-            <h2 class="section__title">Sobre Mim</h2>
-            <p class="about__description">
-              Sou um desenvolvedor Front-End apaixonado por criar interfaces
-              intuitivas e experiências de usuário excepcionais. Com formação em
-              desenvolvimento de software e experiência em vendas, trago uma
-              perspectiva única sobre o ciclo completo do produto — do conceito
-              à entrega.
-              <br /><br />
-              Meu motto é: "Código limpo, interfaces belas, usuários felizes"
-              🎨✨
-              <br /><br />
-              Aqui você encontra meus principais projetos em constante evolução.
-              Meu compromisso é sempre adicionar novas funcionalidades e aplicar
-              as melhores práticas de desenvolvimento.
+      <!-- ===================== TRAJETÓRIA ===================== -->
+      <section class="section section--alt" id="trajetoria" aria-labelledby="trajetoria-title">
+        <div class="container container--narrow">
+          <header class="section__head reveal">
+            <p class="eyebrow">// trajetória</p>
+            <h2 class="section__title" id="trajetoria-title">Da infraestrutura ao código</h2>
+          </header>
+
+          <!-- TODO: preencha os períodos (ex.: "2019 — 2022") em cada .timeline__when -->
+          <ol class="timeline">
+            <li class="timeline__item reveal">
+              <p class="timeline__when">Início da carreira</p>
+              <h3 class="timeline__title">Suporte Técnico, Redes &amp; Infraestrutura</h3>
+              <p>Atendimento a usuários, diagnóstico de hardware e software, configuração de redes. Foi onde aprendi a resolver problemas sob pressão e a explicar tecnologia para quem não é técnico.</p>
+            </li>
+            <li class="timeline__item reveal">
+              <p class="timeline__when">Em conclusão</p>
+              <h3 class="timeline__title">Bacharelado em Sistemas de Informação</h3>
+              <p>Base em engenharia de software, banco de dados, análise e modelagem de sistemas.</p>
+            </li>
+            <li class="timeline__item timeline__item--now reveal">
+              <p class="timeline__when">Hoje</p>
+              <h3 class="timeline__title">Desenvolvedor Full-Stack</h3>
+              <p>Projetos web publicados, do front-end à autenticação e persistência, e automações com n8n e IA.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ===================== CONTATO ===================== -->
+      <section class="section" id="contato" aria-labelledby="contato-title">
+        <div class="container">
+          <div class="cta reveal">
+            <p class="eyebrow">// contato</p>
+            <h2 class="section__title" id="contato-title">Tem uma vaga ou um desafio técnico?</h2>
+            <p class="section__lead">
+              Estou aberto a oportunidades como desenvolvedor Full-Stack ou Analista de Sistemas.
+              Respondo rápido por e-mail ou LinkedIn.
             </p>
 
-            <div class="about__info grid">
-              <div class="about__box">
-                <h3 class="about__title">Estudos Ativos</h3>
-                <span class="about__subtitle"
-                  >Desenvolvimento Web Full Stack</span
-                >
-              </div>
-              <div class="about__box">
-                <h3 class="about__title">Foco</h3>
-                <span class="about__subtitle"
-                  >Node.js e Interfaces Responsivas</span
-                >
-              </div>
+            <!--
+              TODO: troque SEU-EMAIL@exemplo.com pelo seu e-mail profissional
+              (aparece 2x abaixo: no href e no data-email).
+            -->
+            <div class="cta__actions">
+              <a class="btn btn--primary" href="mailto:SEU-EMAIL@exemplo.com" id="email-link">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+                Enviar e-mail
+              </a>
+              <button class="btn btn--ghost" type="button" id="copy-email" data-email="SEU-EMAIL@exemplo.com">
+                <svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg>
+                Copiar e-mail
+              </button>
+              <a class="btn btn--ghost" href="https://www.linkedin.com/in/patrickcaramico/" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg>
+                LinkedIn
+              </a>
+              <a class="btn btn--ghost" href="https://github.com/PatrickCaramico" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+                GitHub
+              </a>
             </div>
           </div>
-
-          <!-- Nova área ilustrativa lateral da seção Sobre -->
-          <div class="about__img-wrapper hidden align-right">
-            <div class="about__blob glass">
-              <img
-                src="./assets/images/about-illustration.png"
-                alt="Ilustração de Desenvolvimento"
-                class="about__img"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SEÇÃO PROJETOS -->
-      <section class="projects section" id="projetos">
-        <h2 class="section__title text-center hidden">Projetos Recentes</h2>
-
-        <div class="projects__container container grid hidden">
-          <!-- PROJETO 1: FocoWave -->
-          <article class="projects__card glass">
-            <div class="projects__img-wrapper">
-              <img
-                src="./assets/images/FocoWave.png"
-                alt="Projeto FocoWave"
-                class="projects__img"
-                id="focowave-img"
-              />
-            </div>
-            <div class="projects__content">
-              <div class="projects__tags">
-                <span class="projects__tag">JavaScript</span>
-                <span class="projects__tag">Firebase</span>
-                <span class="projects__tag">Chart.js</span>
-              </div>
-              <h3 class="projects__title">FocoWave</h3>
-              <p class="projects__description">
-                App estilo Pomodoro avançado com autenticação Google (Firebase),
-                dashboard analítico (Chart.js), sistema de
-                <i>streaks</i> diários, temas customizáveis, favoritos de sons e
-                um modo visitante com persistência local total.
-              </p>
-              <div class="projects__buttons">
-                <a
-                  href="https://focowaves.netlify.app/"
-                  class="button button--small button--primary"
-                  >Demo <i class="ph ph-link"></i
-                ></a>
-                <a
-                  href="https://github.com/PatrickCaramico/FocoWave"
-                  class="button button--small button--ghost"
-                  >GitHub <i class="ph ph-github-logo"></i
-                ></a>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJETO 2: ClickColor -->
-          <article class="projects__card glass">
-            <div class="projects__img-wrapper">
-              <img
-                src="./assets/images/ClickColor.png"
-                alt="Projeto ClickColor"
-                class="projects__img"
-                id="clickcolor-img"
-              />
-            </div>
-            <div class="projects__content">
-              <div class="projects__tags">
-                <span class="projects__tag">Design</span>
-                <span class="projects__tag">CSS3</span>
-              </div>
-              <h3 class="projects__title">ClickColor</h3>
-              <p class="projects__description">
-                Gerador de paletas front-end focado em UX. Permite criar
-                combinações (aleatório ou HEX), visualizar detalhes em tempo
-                real, testar em um <i>preview</i> de site e exportar formatos
-                práticos.
-              </p>
-              <div class="projects__buttons">
-                <a
-                  href="https://clickcolors.netlify.app/"
-                  class="button button--small button--primary"
-                  >Demo <i class="ph ph-link"></i
-                ></a>
-                <a
-                  href="https://github.com/PatrickCaramico/ClickColor"
-                  class="button button--small button--ghost"
-                  >GitHub <i class="ph ph-github-logo"></i
-                ></a>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJETO 3: ClickTime -->
-          <article class="projects__card glass">
-            <div class="projects__img-wrapper">
-              <img
-                src="./assets/images/ClickTime.png"
-                alt="Projeto ClickTime"
-                class="projects__img"
-                id="clicktime-img"
-              />
-            </div>
-            <div class="projects__content">
-              <div class="projects__tags">
-                <span class="projects__tag">Utilitário</span>
-                <span class="projects__tag">Node.js</span>
-              </div>
-              <h3 class="projects__title">ClickTime</h3>
-              <p class="projects__description">
-                Aplicação web de foco e contagem regressiva com autenticação por
-                perfil, personalização visual e controles de sessão.
-              </p>
-              <div class="projects__buttons">
-                <a
-                  href="https://clicktimev3.netlify.app/app/html/login.html"
-                  class="button button--small button--primary"
-                  >Demo <i class="ph ph-link"></i
-                ></a>
-                <a
-                  href="https://github.com/PatrickCaramico/ClickTime_V3"
-                  class="button button--small button--ghost"
-                  >GitHub <i class="ph ph-github-logo"></i
-                ></a>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJETO 4: Gmail Clear Spam -->
-          <article class="projects__card glass">
-            <div class="projects__img-wrapper">
-              <img
-                src="./assets/images/Gmail_spam.png"
-                alt="Projeto Gmail Clear Spam"
-                class="projects__img"
-                id="gmail-spam-img"
-              />
-            </div>
-            <div class="projects__content">
-              <div class="projects__tags">
-                <span class="projects__tag">Utilitário</span>
-                <span class="projects__tag">Node.js</span>
-                <span class="projects__tag">N8N</span>
-              </div>
-              <h3 class="projects__title">Gmail Clear Spam</h3>
-              <p class="projects__description">
-                Um aplicativo premium e moderno para limpar sua aba de Spam do Gmail com um único clique, utilizando o poder do n8n..
-              </p>
-              <div class="projects__buttons">
-                <a
-                  href="https://spam-ia-gmail.netlify.app/"
-                  class="button button--small button--primary"
-                  >Demo <i class="ph ph-link"></i
-                ></a>
-                <a
-                  href="https://github.com/PatrickCaramico/gmail-spam-cleaner"
-                  class="button button--small button--ghost"
-                  >GitHub <i class="ph ph-github-logo"></i
-                ></a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- SEÇÃO HABILIDADES -->
-      <section class="skills section" id="habilidades">
-        <h2 class="section__title text-center hidden">
-          Principais Habilidades
-        </h2>
-
-        <div class="skills__container container grid hidden">
-          <div class="skills__panel glass border-radius">
-            <div class="skills__group">
-              <h3 class="skills__group-title">
-                <i class="ph ph-laptop"></i> Linguagens & Frameworks
-              </h3>
-              <div class="skills__icons">
-                <div class="skill__item">
-                  <i class="devicon-html5-plain colored skill__tech-icon"></i>
-                </div>
-                <div class="skill__item">
-                  <i class="devicon-css3-plain colored skill__tech-icon"></i>
-                </div>
-                <div class="skill__item">
-                  <i
-                    class="devicon-javascript-plain colored skill__tech-icon"
-                  ></i>
-                </div>
-                <div class="skill__item">
-                  <i class="devicon-nodejs-plain colored skill__tech-icon"></i>
-                </div>
-                <div class="skill__item">
-                  <i class="devicon-php-plain colored skill__tech-icon"></i>
-                </div>
-                <div class="skill__item">
-                  <i class="devicon-python-plain colored skill__tech-icon"></i>
-                </div>
-              </div>
-            </div>
-
-            <div class="skills__group">
-              <h3 class="skills__group-title">
-                <i class="ph ph-palette"></i> Design & Layout
-              </h3>
-              <div class="skills__chips">
-                <span class="skill__chip skill__chip--orange">Flexbox</span>
-                <span class="skill__chip skill__chip--blue">CSS Grid</span>
-                <span class="skill__chip skill__chip--green">Responsivo</span>
-                <span class="skill__chip skill__chip--purple">Bootstrap</span>
-                <span class="skill__chip skill__chip--red">Mobile First</span>
-              </div>
-            </div>
-
-            <div class="skills__group">
-              <h3 class="skills__group-title">
-                <i class="ph ph-wrench"></i> Ferramentas & Plataformas
-              </h3>
-              <div class="skills__icons skills__icons--tools">
-                <div class="skill__item">
-                  <i class="devicon-git-plain colored skill__tech-icon"></i>
-                </div>
-                <div class="skill__item">
-                  <i class="devicon-vscode-plain colored skill__tech-icon"></i>
-                </div>
-                <div class="skill__item">
-                  <i class="devicon-figma-plain colored skill__tech-icon"></i>
-                </div>
-                <div class="skill__item">
-                  <i
-                    class="devicon-mysql-plain-wordmark colored skill__tech-icon"
-                  ></i>
-                </div>
-                <div class="skill__item">
-                  <i
-                    class="devicon-wordpress-plain-wordmark skill__tech-icon skill__tech-icon--wp"
-                  ></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SEÇÃO CONTATO -->
-      <section class="contact section" id="contato">
-        <h2 class="section__title text-center hidden">Vamos Conversar?</h2>
-
-        <div class="contact__container container grid hidden">
-          <div class="contact__info glass p-8 border-radius">
-            <h3 class="contact__title">Informações de Contato</h3>
-            <p class="contact__description">
-              Sinta-se livre para entrar em contato comigo caso tenha interesse
-              em um projeto, colaboração ou apenas para bater papo.
-            </p>
-
-            <div class="contact__socials">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                class="contact__social-link"
-                title="LinkedIn"
-                ><i class="ph ph-linkedin-logo"></i
-              ></a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                class="contact__social-link"
-                title="GitHub"
-                ><i class="ph ph-github-logo"></i
-              ></a>
-              <a
-                href="mailto:email@exemplo.com"
-                class="contact__social-link"
-                title="Email"
-                ><i class="ph ph-envelope-simple"></i
-              ></a>
-            </div>
-          </div>
-
-          <form
-            action=""
-            class="contact__form glass p-8 border-radius"
-            id="contact-form"
-          >
-            <div class="contact__inputs">
-              <div class="contact__content">
-                <label for="name" class="contact__label">Nome Completo</label>
-                <input
-                  type="text"
-                  id="name"
-                  class="contact__input"
-                  placeholder="Seu nome incrível..."
-                  required
-                />
-              </div>
-
-              <div class="contact__content">
-                <label for="email" class="contact__label">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  class="contact__input"
-                  placeholder="seu@email.com"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="contact__content">
-              <label for="message" class="contact__label">Mensagem</label>
-              <textarea
-                name="message"
-                id="message"
-                cols="30"
-                rows="5"
-                class="contact__input"
-                placeholder="Como posso ajudar no seu projeto?"
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit" class="button button--primary button--full">
-              Enviar Mensagem <i class="ph ph-paper-plane-right"></i>
-            </button>
-            <p class="contact__message" id="contact-message"></p>
-          </form>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="footer__container container">
-        <p class="footer__copy">
-          &#169; <span id="year"></span> Patrick Souza. Todos os direitos
-          reservados.
-        </p>
+      <div class="container footer__inner">
+        <p>© <span id="year">2026</span> Patrick Souza</p>
+        <p class="footer__meta">Feito à mão com HTML, CSS e JavaScript puro · sem frameworks</p>
       </div>
     </footer>
 
-    <!-- Lógica Principal JS -->
-    <script src="./assets/js/main.js"></script>
+    <!-- Aviso acessível (lido por leitores de tela) para "e-mail copiado" -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./assets/js/main.js" defer></script>
   </body>
 </html>
